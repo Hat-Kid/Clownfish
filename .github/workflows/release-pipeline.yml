@@ -33,13 +33,13 @@ jobs:
         run: ls -Rl ./staging/
       - name: Upload Assets
         env:
-          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           TAG_VAL=$(echo ${{ github.REF }} | awk -F'refs/tags/' '{print $2}')
           gh release upload "${TAG_VAL}" ${{ github.WORKSPACE }}/staging/* --repo hat-kid/clownfish --clobber
       - name: Publish Release
         env:
-          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           TAG_VAL=$(echo ${{ github.REF }} | awk -F'refs/tags/' '{print $2}')
           gh release edit ${TAG_VAL} --draft=false --repo hat-kid/clownfish
