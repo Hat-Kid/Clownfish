@@ -27,8 +27,9 @@ jobs:
         id: tag_version
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEFAULT_BRANCH: "master"
           WITH_V: true
-          DEFAULT_BUMP: minor
+          DEFAULT_BUMP: "patch"
       - name: Create Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
