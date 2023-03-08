@@ -22,7 +22,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Add SAPJCo dependency to Maven
-      run: mvn install:install-file -Dfile=${{github.workspace}}/lib/SAPJCo-3.8.jar -DgroupId=SAPJCo -DartifactId=SAPJCo -Dversion=3.8 -Dpackaging=jar -DgeneratePom=true
+      run: mvn -e install:install-file -Dfile=${{github.workspace}}/lib/SAPJCo-3.8.jar -DgroupId=SAPJCo -DartifactId=SAPJCo -Dversion=3.8 -Dpackaging=jar -DgeneratePom=true
     - name: Add ojdbc8 dependency to Maven
       run: mvn install:install-file -Dfile=${{github.workspace}}/lib/ojdbc8-19.3.jar -DgroupId=com.oracle -DartifactId=ojdbc8 -Dversion=19.3 -Dpackaging=jar -DgeneratePom=true
     - name: Build with Maven
