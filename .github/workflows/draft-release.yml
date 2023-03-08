@@ -15,14 +15,7 @@ on:
   pull_request:
     inputs:
       bump:
-        description: 'Semver Bump Type'
-        required: true
         default_bump: 'patch'
-        type: choice
-        options:
-          - patch
-          - minor
-          - major
 
 jobs:
   cut-release:
