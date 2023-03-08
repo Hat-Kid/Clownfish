@@ -24,6 +24,7 @@ jobs:
       - name: Bump Version and Push Tag
         if: github.repository == 'hat-kid/clownfish'
         uses: anothrNick/github-tag-action@master
+        id: tag_version
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WITH_V: true
