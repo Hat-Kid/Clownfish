@@ -27,7 +27,6 @@ jobs:
         id: tag_version
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VERBOSE: true
           DEFAULT_BRANCH: "master"
           WITH_V: true
           DEFAULT_BUMP: "patch"
